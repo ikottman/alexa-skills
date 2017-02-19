@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "Place",
+	  "slots": [
+        {
+          "name": "name",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    }
+  ]
+}

@@ -1,2 +1,2 @@
 # alexa-skills
-Collection of lambda functions backing Alexa skills
+Collection of lambda functions backing Alexa skills.

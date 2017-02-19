@@ -87,3 +87,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# zips are needed to upload to Alexa
+*.zip
