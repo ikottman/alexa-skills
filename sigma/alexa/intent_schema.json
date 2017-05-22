@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "state",
+          "type": "TV_STATES"
+        }
+      ],
+      "intent": "TV"
+    }
+  ]
+}
