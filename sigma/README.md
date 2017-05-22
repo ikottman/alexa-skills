@@ -1,14 +1,21 @@
 # Sigma
-Turns TV on and off. Run on a raspberry pi 3 connected to TV via HDMI.
+Turns TV on and off. Run on a Raspberry Pi 3 connected to TV via HDMI.
 
 # Services Used
 * [SQS](https://console.aws.amazon.com/sqs/home)
+* [AWS Lambda](https://console.aws.amazon.com/lambda/home)
 * [Alexa Skills Kit](https://developer.amazon.com/edw/home.html#/skills/list)
 
 # Example Invocation
 > Alexa, tell TV to turn off.
 
-# How to Run
+# Setting up the Lambda
+* Create new lambda using the code in `lambda.py`
+* It has no extra dependencies so you can edit the code inline.
+* Give the lambda a role that can write to SQS.
+* Configure the `queue` environment variable with the URL of the SQS queue.
+
+# How to Run Local Service
 
 ## Install CEC
 sudo apt-get update
