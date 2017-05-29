@@ -1,13 +1,74 @@
 {
   "intents": [
     {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "Sigma",
+      "samples": [
+        "to turn {power}",
+        "turn {power}",
+        "to turn itself {power}",
+        "to shut {power}",
+        "to turn {power} tv",
+        "to turn tv {power}",
+        "turn volume {volume}",
+        "volume {volume}",
+        "turn the volume {volume}"
+      ],
       "slots": [
         {
-          "name": "state",
-          "type": "TV_STATES"
+          "name": "power",
+          "type": "TV_POWER",
+          "samples": []
+        },
+        {
+          "name": "volume",
+          "type": "TV_VOLUME",
+          "samples": []
         }
-      ],
-      "intent": "TV"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "TV_POWER",
+      "values": [
+        {
+          "name": {
+            "value": "on"
+          }
+        },
+        {
+          "name": {
+            "value": "off"
+          }
+        }
+      ]
+    },
+    {
+      "name": "TV_VOLUME",
+      "values": [
+        {
+          "name": {
+            "value": "up"
+          }
+        },
+        {
+          "name": {
+            "value": "down"
+          }
+        }
+      ]
     }
   ]
 }
