@@ -23,3 +23,7 @@ sudo apt-get cec-utils
 
 ## Start service
 nohup python sigma.py &
+
+# Useful links
+* [Tool for creating CEC commands](http://www.cec-o-matic.com/)
+* [What brand TVs support CEC](http://libcec.pulse-eight.com/vendor/support)

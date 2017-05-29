@@ -20,6 +20,14 @@ logger.setLevel(logging.INFO)
 def delete_message(receipt):
   sqs.delete_message(QueueUrl=queue_url, ReceiptHandle=receipt)
 
+def volume_up():
+  logging.info('turning on')
+  call("echo 'volup 0' | cec-client -s -d 1 RPI", shell=True)
+
+def volume_down():
+  logging.info('turning off')
+  call("echo 'voldown 0' | cec-client -s -d 1 RPI", shell=True)
+
 def turn_tv_on():
   logging.info('turning on')
   call("echo 'on 0' | cec-client -s -d 1 RPI", shell=True)
@@ -39,6 +47,10 @@ def poll_queue():
       turn_tv_on();
     elif (body == 'off'):
       turn_tv_off();
+    elif (body == 'up'):
+      volume_up();
+    elif (body == 'down'):
+      volume_down();
     else:
       logging.error('found invalid message body', body)
 
