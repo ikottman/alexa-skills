@@ -24,6 +24,11 @@ sudo apt-get cec-utils
 ## Start service
 nohup python sigma.py &
 
+## Setup crontab
+```
+sudo crontab -e
+@reboot export sqs_queue="the_queue" && export AWS_DEFAULT_REGION=us-east-1 && export AWS_ACCESS_KEY_ID=access_key && export AWS_SECRET_ACCESS_KEY=secret && /usr/bin/python /home/pi/Desktop/alexa-skills/sigma/sigma.py > /var/log/sigma.log 2>&1
+```
 # Useful links
 * [Tool for creating CEC commands](http://www.cec-o-matic.com/)
 * [What brand TVs support CEC](http://libcec.pulse-eight.com/vendor/support)
