@@ -7,7 +7,7 @@ Turns TV on and off. Run on a Raspberry Pi 3 connected to TV via HDMI.
 * [Alexa Skills Kit](https://developer.amazon.com/edw/home.html#/skills/list)
 
 # Example Invocation
-> Alexa, tell TV to turn off.
+> Alexa, ask sigma to turn the TV off.
 
 # Setting up the Lambda
 * Create new lambda using the code in `lambda.py`
