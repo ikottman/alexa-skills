@@ -57,6 +57,7 @@ def poll_queue():
     # delete the message so we don't get it again
     delete_message(receipt)
 
+logging.info('sigma py is online')
 
 # poll for messages every five seconds. Ignore failures
 while True:

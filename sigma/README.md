@@ -15,20 +15,23 @@ Turns TV on and off. Run on a Raspberry Pi 3 connected to TV via HDMI.
 * Give the lambda a role that can write to SQS.
 * Configure the `queue` environment variable with the URL of the SQS queue.
 
-# How to Run Local Service
+# Run the local service
+The local service is run with Docker on ARM architecture (a.k.a. raspberry pi)
 
-## Install CEC
-sudo apt-get update
-sudo apt-get cec-utils
+## Create your local.env
+The container is configured via an environment file. See `local.env` for an example of the keys that need to be configured.
 
-## Start service
-nohup python sigma.py &
+## Build the image
+`docker build . -t sigmapy`
 
 ## Setup crontab
+To start the service on boot, edit crontab:
+
 ```
-sudo crontab -e
-@reboot export sqs_queue="the_queue" && export AWS_DEFAULT_REGION=us-east-1 && export AWS_ACCESS_KEY_ID=access_key && export AWS_SECRET_ACCESS_KEY=secret && /usr/bin/python /home/pi/Desktop/alexa-skills/sigma/sigma.py > /var/log/sigma.log 2>&1
+crontab -e 
+@reboot /usr/bin/docker run --net=host --device=/dev/vchiq --env-file /absolute/path/to/your/local.env sigmapy:latest
 ```
+
 # Useful links
 * [Tool for creating CEC commands](http://www.cec-o-matic.com/)
 * [What brand TVs support CEC](http://libcec.pulse-eight.com/vendor/support)
